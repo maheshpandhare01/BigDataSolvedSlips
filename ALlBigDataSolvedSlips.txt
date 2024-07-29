@@ -1,0 +1,219 @@
+ 
+
+Q1.  Write an R program to find the maximum and the minimum value of a given vector.
+
+ 
+number = c(50,65,4,85,1,24,3)
+print(number)
+print(paste("Maximum value of the said vector:" ,max(number))) 
+print(paste("Minimum value of the said vector:" ,min(number)))
+
+Q2. Write an R program to Sort a Vector in Ascending and Descending Order.
+
+
+number = c(10, 20, 30, 25, 9, 26)  
+print(number)
+print("Sort in ascending order:")  
+print(sort(number))
+print("Sort in descending order:") 
+print(sort(number, decreasing=TRUE)) 
+
+Q3. write an R program to compare two data frames to find the elements in first data frame that are not present in second data frame.
+
+
+first_frame = data.frame( "products" = c("product1", "product2", "product3"), 
+"Mouse" = c(2,4,6), "Pendrive" = c(5,7,9), "Laptop" = c(1,3,5) ) //Write in one line
+second_frame = data.frame( "products" = c("product1", "product2", "product3"),
+"Mouse" = c(2,4,6), "Pendrive" = c(5,7,9), "Laptop" = c(6,9,4) )  //Write in one line 
+print(first_frame) 
+print(second_frame) 
+print("Rows in first data frame that are not present in second data frame:") 
+print(setdiff(first_frame, second_frame)) 
+
+4.Write an R program to extract first 10 English letter in lower case and last 10 letters in upper case and extract letters between 22nd to 24th letters in upper case. 
+
+
+print("First 10 letters in lower case:") 
+t = head(letters, 10) 
+print(t) 
+print("Last 10 letters in upper case:") 
+r = head(LETTERS, 10) 
+print(r) 
+print("Letters between 22th to 24th letters in upper case:") 
+e = tail(LETTERS[22:24]) 
+print(e)
+
+5.Write an R program to find Sum, Mean and Product of a Vector. 
+
+
+num = c(98,54,63,32,7) 
+print(sum(num)) 
+print(mean(num))
+print(prod(num)) 
+
+
+6. Write an R program to create a simple bar plot of five subject’s marks. 
+
+
+marks = c(99,95,21,69,45)
+barplot(marks, main = "Comparing marks of 5 Subjects",xlab = "Marks",ylab = "Subject", 
+names.arg = c("PHP","Big Data","Data Structure","DM","Software Engineering")
+//Write in one line
+
+7. Write an R program to create a Data frames which contain details of 5 employees and display the details in ascending order.
+
+
+Employee_names = data.frame(Name=c("Mahesh","Amol","Tejas","Aakash","Gokul"), 
+Gender=c("M","M","M","M","M"), Age=c(20,21,21,22,20), 
+Designation=c("CEO","Developer","Managing Director","Product Manager","Jr.Developer"),
+ Mobile_No=c("9028915464","9545122584","9025415263","7821549632","8625444521") ) 
+//write in one line
+print("Details of the Employees:") 
+print(Employee_names) 
+
+ 
+
+8. Write an R program to create a data frame using two given vectors and display the duplicated elements and unique rows of the said data frame. 
+
+
+first= c(5,6,98,4,21,65,8,4,3,97,5,4)
+second= c(4,6,9,85,21,97,32,54,65,5,4,3)  
+fs = data.frame(first,second) 
+print(fs) 
+print("Duplicate elements of the said data frame:") 
+print(duplicated(fs)) 
+print("Unique rows of the said data frame:") 
+print(unique(fs))
+
+
+9. Write an R program to change the first level of a factor with another level of a given factor.
+
+vector = c("a", "b", "a", "c", "b") 
+print(vector) 
+first = factor(vector) 
+levels(first)[1] = "b" 
+print(first)
+
+
+10.    Write a script in R to create a list of cities and perform the following:
+1) Give names to the elements in the list. 
+2) Add an element at the end of the list. 
+3) Remove the last element. 
+ 4) Update the 3rd Element
+
+list_data <- list("Pune","Nanded","Mumbai")
+print(list_data)
+names(list_data) <- c("Pune","Nanded","Mumbai")
+print(list_data)
+print("New Element added at last")
+append(list_data,"Nashik")
+print("Element Deleted")
+list_data[-4]
+list_data[3]="Nagpur"
+print(list_data)
+
+
+11.  Write a script in R to create two vectors of different lengths and give these vectors as input to array and print addition and substraction of those matrices.
+
+v1 = c(1,3,4,5)
+v2 = c(10,11,12,13,14,15)
+print(v1)
+print(v2)
+result = array(c(v1,v2),dim = c(3,3,2))
+print("New array:")
+print(result)
+matrix1 <- matrix(c(5, 9, 5, 3, 1, 7), nrow = 2)
+print(matrix1)
+matrix2 <- matrix(c(6, 4, 3, 8, 2, 1), nrow = 2)
+print(matrix2)
+result <- matrix1 + matrix2
+print("Addition of Two Matrix is:")
+print(result)
+result <- matrix1 - matrix2
+print("Substraction of Two Matrix is:")
+print(result)
+
+
+12.  Write an R program to calculate Multiplication Table.
+
+a<-5
+for(i in 1:10)
+{
+print(paste(a,"x",i,"=",a*i))
+}
+
+
+13.   Consider the inbuilt iris dataset 
+i) Create a variable “y” and attach to it the output attribute of the “iris” dataset. 
+ii) Create a bar plot to breakdown your output attribute. 
+iii) Create a density plot matrix for each attribute by class value
+
+
+14.  Write an R program to concatenate two given factor in a single factor and display in descending order.
+
+factor1 = sample(LETTERS, size=4, replace=TRUE))
+factor2 = sample(LETTERS, size=4, replace=TRUE))
+m= factor(c(factor1, factor2)
+print("After Concatnation of Two Factors:")
+print(m)
+print("Sort in descending order:")
+print(sort(m, decreasing=TRUE))
+
+
+15.  Write an R program to extract the five of the levels of factor created from a random sample from the LETTERS
+
+words = sample(LETTERS,size=15,replace=TRUE)
+print(words)
+factors = factor(words)
+print("Factors are:")
+print(factors)
+print("Extracted five levels of factor created from a random sample:")
+print(table(words[1:5]))
+
+
+16.Consider the inbuilt mtcar dataset
+i)  Subset the vector, "mtcars[,1]", for values greater than "15.0".
+ii) Subset "airquality" for "Ozone" greater than "28", or "Temp" greater than "70".Return the first five rows.
+iii)Subset "airqaulity" for "Ozone" greater than "100". Select the columns "Ozone", "Temp", "Month" and "Day" only.
+
+17.  Write an R program to calculate Decimal into binary
+ of a given number.
+
+
+decimal_to_binary<- function(num) {
+if(num > 1) {
+db(as.integer(num/2))
+}
+cat(num %% 2)
+}
+decimal_to_binary(40)
+
+
+18.  Write an R program to create three vectors a, b, c with 3 integers. Combine the three vectors to become a 3*3 matrix where each column represents a vector. Print the content of the matrix.
+
+a <- c(1,2,3)
+b <- c(4,5,6)
+c <- c(7,8,9)
+combine <- cbind(a,b,c)
+print("Content of the Matrix is:")
+print(combine)
+
+
+19.  Write an R program to draw an empty plot and an empty plot specify the axes limits of the graphic.
+
+plot.new()
+print("Empty plot specify the axes limits of the graphic:")
+plot(1, type="n", xlab="", ylab="", xlim=c(0, 20), ylim=c(0, 20))
+
+
+20. 
+
+
+
+
+
+
+
+
+
+
